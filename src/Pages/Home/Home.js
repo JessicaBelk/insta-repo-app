@@ -1,20 +1,19 @@
+import React from "react";
 import React from 'react';
 import {Switch,Route} from 'react-router-dom'
-import Header from '../../Components/Header/Header';
-import NewHome from '../NewHome/NewHome';
-import Explore from '../Explore/Explore'
-import Profile from '../Profile/Profile';
-const Home = ({handleLogged}) => {
+import HeaderContainer from '../../Components/Header/HeaderContainer';
+import TasksContainer from "../tasks/TasksContainer";
+import "./home.css";
+
+const HomeContainer = ({handleLogged}) => {
     return(
         <div>
-            <Header isLogged={handleLogged}/>
-            <Switch>
-                <Route exact path='/' component={NewHome}/>
-                <Route exact path='/explore' component={Explore}/>
-                <Route path='/:username' component={Profile}/>
-            </Switch>
+              <HeaderContainer isLogged={handleLogged}/>
+              <Switch>
+           <Route exact path='/' component={TasksContainer}/>
+           </Switch>
         </div>
     )
-}
+};
 
-export default Home;
+export default HomeContainer;
